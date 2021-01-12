@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  a {
+      text-decoration: none;
+    }
+    @font-face{
+        font-family: custom;
+        src: url('./BebasNeue-Regular.ttf');
+    }
+    body {
+      font-family: custom;
+    }
+  .app {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+.timer{
+    text-align: center;
+}
+.timer h2{
+    font-size: 45px;
+    color: #343434;
+    position: relative;
+}
+.timer h2::before{
+    position: absolute;
+    bottom: -0px;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    border-radius: 50rem;
+    background-color: #666;
+    content: '';
+}
+.timer .Pause::before{
+    animation:timer 1.2s linear infinite;
+}
+@keyframes timer{
+    0%{transform: scaleX(.25);}
+    50%{transform: scaleX(1);}
+    100%{transform: scaleX(.25);}
+}
+.timer div{
+    margin-top: 2rem;
+}
+.timer button{
+    width: 60px;
+    font-family: inherit;
+    margin:0 4px;
+    padding:3px 0;
+    display: inline-block;
+    font-size: 20px;
+    background-color: #fff;
+    border: 1px solid #444;
+    outline: none;
+    border-radius: 3px;
+    transition: .2s all;
+}
+.timer button:hover{
+    background-color: #eeeeee;
+}
