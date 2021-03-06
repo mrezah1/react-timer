@@ -1,0 +1,34 @@
+.builder {
+  margin: 0 .5rem;
+  width: 150px;
+  direction: rtl;
+  position: relative;
+}
+.builder p {
+  color: #444;
+}
+.builder .control-time {
+  opacity: 0;
+  transition: 0.33s ease-in;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  height: 100%;
+}
+.builder:hover .control-time {
+  opacity: 1;
+}
+.builder .control-time div {
+  display: block;
+  width: 100%;
+  height: 50%;
+  cursor: pointer;
+  transition: 0.3s all;
+  background-color: transparent;
+  border: none;
+}
+.builder .control-time div img {
+  width: 21px;
+  height: 21px;
+  opacity:.75;
+}

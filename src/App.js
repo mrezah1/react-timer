@@ -1,9 +1,9 @@
 import React from "react";
-import Timer from "./Timer";
+import Main from "./components/Main";
 
 const App = () => (
   <div className="app">
-    <Timer />
+    <Main />
   </div>
 );
 

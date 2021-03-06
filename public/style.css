@@ -1,67 +1,117 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+@font-face {
+  font-family: custom;
+  src: url("./BebasNeue-Regular.ttf");
+}
+body {
+  font-family: custom;
+}
+.fh {
+  transition: 0.25s all;
+}
+.fh:hover {
+  opacity: 0.83;
+}
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  text-align: center;
+}
+.timer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.timer p {
+  font-size: 45px;
+  color: #343434;
+}
+.timer::before {
+  position: absolute;
+  bottom: -38px;
+  left: calc(60% - calc(100% - 60%));
+  width: 60%;
+  height: 2px;
+  border-radius: 50rem;
+  background-color: #7945d3;
+  box-shadow: 0 0 7px 0 #7945d3;
+  content: "";
+  display: none;
+}
+.timer.Pause::before {
+  animation: timer 1.2s linear infinite;
+  display: block;
+}
+@keyframes timer {
+  0% {
+    transform: scaleX(0.2);
   }
-  a {
-      text-decoration: none;
-    }
-    @font-face{
-        font-family: custom;
-        src: url('./BebasNeue-Regular.ttf');
-    }
-    body {
-      font-family: custom;
-    }
-  .app {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  50% {
+    transform: scaleX(1);
   }
-  
-  
-.timer{
-    text-align: center;
+  100% {
+    transform: scaleX(0.2);
+  }
 }
-.timer h2{
-    font-size: 45px;
-    color: #343434;
-    position: relative;
+.main > div {
+  margin-top: 4.8rem;
 }
-.timer h2::before{
-    position: absolute;
-    bottom: -0px;
-    left: 25%;
-    width: 50%;
-    height: 2px;
-    border-radius: 50rem;
-    background-color: #666;
-    content: '';
+.wrapper-control button {
+  width: 48%;
+  font-family: inherit;
+  padding: 6px 0 3px 0;
+  letter-spacing: 2px;
+  display: inline-block;
+  font-size: 22px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  transition: 0.22s all ease-in-out;
+  color: #fff;
+  cursor: pointer;
 }
-.timer .Pause::before{
-    animation:timer 1.2s linear infinite;
+.wrapper-control button.Start {
+  background-color: #0a9b46;
+  border-radius: 50rem 0 0 50rem;
+  box-shadow: 0 0 5px 0 #0a9b46;
 }
-@keyframes timer{
-    0%{transform: scaleX(.25);}
-    50%{transform: scaleX(1);}
-    100%{transform: scaleX(.25);}
+.wrapper-control button.Pause {
+  background-color: #3f51b5;
+  border-radius: 50rem 0 0 50rem;
+  box-shadow: 0 0 5px 0 #3f51b5;
 }
-.timer div{
-    margin-top: 2rem;
+.wrapper-control button.reset {
+  background-color: #dc3545;
+  border-radius: 0rem 50rem 50rem 0;
+  box-shadow: 0 0 5px 0 #dc3545;
 }
-.timer button{
-    width: 60px;
-    font-family: inherit;
-    margin:0 4px;
-    padding:3px 0;
-    display: inline-block;
-    font-size: 20px;
-    background-color: #fff;
-    border: 1px solid #444;
-    outline: none;
-    border-radius: 3px;
-    transition: .2s all;
+
+.type-control button {
+  background-color: #1c99ff;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 3.5px;
+  padding: 7px 12px;
+  font-size: 17px;
+  margin: 0 0.5rem;
+  transition: 0.2s all;
+  cursor: pointer;
 }
-.timer button:hover{
-    background-color: #eeeeee;
+.type-control button.active {
+  transform: scale(1.1);
+  box-shadow: 0 0 7px 0 #1c99ff;
+}
+.type-control button:not(.active) {
+  opacity: 0.3;
 }
